@@ -38,9 +38,11 @@ The **TechStore Web Application** is a dynamic and responsive website built usin
 - **Version Control:** Git (optional)
 
 ![Screenshot_17-11-2024_201444_localhost](https://github.com/user-attachments/assets/4d22df43-7495-4c60-be77-278f4ae1076b)
-![Screenshot_17-11-2024_201540_localhost](https://github.com/user-attachments/assets/e6c82af9-1bd3-4caf-be04-13a1a8e16551)
 ![Screenshot_17-11-2024_20155_localhost](https://github.com/user-attachments/assets/a2cf8285-eb0e-401d-b012-49d2fa67b9ac)
 ![Screenshot_17-11-2024_201519_localhost](https://github.com/user-attachments/assets/35568816-2f21-4402-9c9e-7ba4f9e5596d)
+![Screenshot_17-11-2024_201540_localhost](https://github.com/user-attachments/assets/e6c82af9-1bd3-4caf-be04-13a1a8e16551)
+
+
 
 
 
