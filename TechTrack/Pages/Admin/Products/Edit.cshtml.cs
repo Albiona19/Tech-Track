@@ -32,11 +32,11 @@ namespace TechTrack.Pages.Admin.Products
 				Response.Redirect("/Admin/Products/Index");
 				return;
 			}
-			ProductDto.Name = "";
-			ProductDto.Brand = "";
-			ProductDto.Category = "";
-			ProductDto.Price = 0;
-			ProductDto.Description = "";
+			ProductDto.Name = product.Name;
+			ProductDto.Brand = product.Brand;
+			ProductDto.Category = product.Category;
+			ProductDto.Price = product.Price;
+			ProductDto.Description = product.Description;
 			Product= product;
 		}
         public void OnPost(int? id) {
