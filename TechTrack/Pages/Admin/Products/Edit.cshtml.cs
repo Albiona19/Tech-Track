@@ -39,5 +39,56 @@ namespace TechTrack.Pages.Admin.Products
 			ProductDto.Description = "";
 			Product= product;
 		}
+        public void OnPost(int? id) {
+            if (id == null) {
+                Response.Redirect("/Admin/Products/Index");
+                return;
+            
+            }
+            if (!ModelState.IsValid) 
+            {
+                errorMessage = "Please provide all te required fields";
+                return;
+            }
+            var product = context.Products.Find(id);
+
+
+
+            if (product == null) 
+            {
+				Response.Redirect("/Admin/Products/Index");
+				return;
+			}
+            //update the image file if we have a new image file
+            string newFileName = product.ImageFileName;
+            if(ProductDto.ImageFile != null)
+            {
+                newFileName = DateTime.Now.ToString("yyyyMMddHHmmssfff");
+                newFileName += Path.GetExtension(ProductDto.ImageFile.FileName);
+
+                string imageFullPath = environment.WebRootPath + "/products/" + newFileName;
+                using(var stream = System.IO.File.Create(imageFullPath))
+                {
+                    ProductDto.ImageFile.CopyTo(stream);
+
+                }
+                string oldImageFullPath = environment.WebRootPath + "/products/" + product.ImageFileName;
+                System.IO.File.Delete(oldImageFullPath);    
+            }
+
+            product.Name = ProductDto.Name;
+            product.Brand= ProductDto.Brand;
+            product.Category= ProductDto.Category;
+            product.Description= ProductDto.Description;
+            product.ImageFileName= newFileName;
+
+
+            context.SaveChanges();
+
+
+			Product = product;
+			successMessage = "Product updated successfully";
+			Response.Redirect("/Admin/Products/Index");
+		}
     }
 }
