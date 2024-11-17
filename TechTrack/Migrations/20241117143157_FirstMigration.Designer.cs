@@ -12,7 +12,7 @@ using TechTrack.Services;
 namespace TechTrack.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20241117141637_FirstMigration")]
+    [Migration("20241117143157_FirstMigration")]
     partial class FirstMigration
     {
         /// <inheritdoc />
